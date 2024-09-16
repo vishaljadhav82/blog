@@ -7,7 +7,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from '@/components/header/Header';
 import Footer from '@/components/footer/Footer';
 import Link from 'next/link';
-import { db } from '../firebase-config';
+import { db } from '../../firebase-config';
 import { collection, query, where, orderBy, limit, getDocs } from 'firebase/firestore';
 import { useRouter } from 'next/navigation'; // Import useRouter from next/navigation
 

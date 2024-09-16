@@ -7,17 +7,13 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from '@/components/header/Header';
 import Footer from '@/components/footer/Footer';
 import Link from 'next/link';
-import { db } from '../firebase-config';
-import { collection, query, where, orderBy, limit, getDocs } from 'firebase/firestore';
-import { useRouter } from 'next/navigation'; // Import useRouter from next/navigation
-
-const CACHE_KEY = 'cachedBlogs'; // Key for local storage
-const CACHE_DURATION = 1000 * 60 * 60; // Cache duration (1 hour)
+import { db } from '../../firebase-config';
+import { collection, query, where, orderBy, getDocs } from 'firebase/firestore';
+import { useRouter } from 'next/navigation';
 
 const Blogs = () => {
   const router = useRouter();
-  const { query } = router;
-  const currentCategory = query?.category || 'blogs'; // Default to 'blogs' if no category is provided
+  const { query: routerQuery } = router;
 
   const [currentPage, setCurrentPage] = useState(0);
   const [blogsPerPage] = useState(6);
@@ -29,17 +25,22 @@ const Blogs = () => {
   useEffect(() => {
     const fetchBlogs = async () => {
       setLoading(true);
-      setError(null); // Reset error state
+      console.log('Fetching blogs...');
 
       try {
+        console.log('Fetching from Firestore...');
         const postsRef = collection(db, 'posts');
-        const querySnapshot = await getDocs(postsRef);
+        const q = query(
+          postsRef,
+          where('category', '==', 'news') );
+        const querySnapshot = await getDocs(q);
         const blogs = querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
 
         setPageCount(Math.ceil(blogs.length / blogsPerPage));
         const offset = currentPage * blogsPerPage;
         setCurrentBlogs(blogs.slice(offset, offset + blogsPerPage));
       } catch (err) {
+        console.error('Error fetching blogs:', err);
         setError('Failed to fetch blogs.');
       } finally {
         setLoading(false);
@@ -47,8 +48,7 @@ const Blogs = () => {
     };
 
     fetchBlogs();
-  }, [currentPage, currentCategory]); // React to changes in currentPage and currentCategory
-
+  }, [currentPage]);
 
   const handlePageClick = (data) => {
     const selectedPage = data.selected;
