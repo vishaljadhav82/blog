@@ -103,8 +103,8 @@ const Blogs = () => {
               <Card>
                 <Card.Img variant="top" src={blog.img} />
                 <Card.Body>
-                  <Card.Title>{blog.slug}</Card.Title>
-                  <Card.Text>{blog.content.slice(0, 300)}...</Card.Text>
+                  <Card.Title>{blog.title}</Card.Title>
+                  <Card.Text>{blog.description.slice(0, 300)}...</Card.Text>
                   <Link href={`/blogs/${blog.slug}`} className="btn btn-primary">
                     Read More
                   </Link>
