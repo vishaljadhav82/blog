@@ -98,7 +98,7 @@ const BlogPage = async ({ params }) => {
 
       <div className="container mt-4">
         <div className="row">
-          <div className="col-md-8 offset-md-2">
+          <div className="col-md-20">
             <div className="card">
               <div className="card-body">
                 <div className="card-text" dangerouslySetInnerHTML={{ __html: post ? post.content : "Content not available" }} />
