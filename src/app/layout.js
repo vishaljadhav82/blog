@@ -22,8 +22,8 @@ export const metadata = {
   openGraph: {
     title:  "Blog",
     description: "आपला ब्लॉग, आपला वारसा",
-    images: ["../../image.png"],
-    favicon: "../../icon.png", // Replace with the URL of your favicon
+    images: ["./image.png"],
+    favicon: "./icon.png", // Replace with the URL of your favicon
 
   }
 };
