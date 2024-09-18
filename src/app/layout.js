@@ -22,7 +22,7 @@ export const metadata = {
   openGraph: {
     title:  "Blog",
     description: "आपला ब्लॉग, आपला वारसा",
-    images: ["./image.png"],
+    images: ["https://firebasestorage.googleapis.com/v0/b/blog-3551c.appspot.com/o/image.png?alt=media&token=64620259-2181-4137-a906-cee97985ba22"],
     favicon: "./icon.png", // Replace with the URL of your favicon
 
   }
