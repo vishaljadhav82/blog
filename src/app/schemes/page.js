@@ -32,7 +32,7 @@ const Blogs = () => {
         const postsRef = collection(db, 'posts');
         const q = query(
           postsRef,
-          where('category', '==', 'schems') );
+          where('category', '==', 'schemes') );
         const querySnapshot = await getDocs(q);
         const blogs = querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
 
