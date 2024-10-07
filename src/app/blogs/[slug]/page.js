@@ -1,12 +1,13 @@
 import { db } from "../../../firebase-config";
 import { collection, query, where, getDocs } from 'firebase/firestore';
 import 'bootstrap/dist/css/bootstrap.min.css'; // Already imported in your case
-import '@/components/header/header.css'
+import './header.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {   faClipboardList, faBookOpen, faPen, faCalculator, faTrophy, faBell, faComments, faUser, faCogs, faChartLine, faEnvelope, faFileAlt, faSignInAlt, faUserPlus, faHome } from '@fortawesome/free-solid-svg-icons';
 
 export async function generateMetadata({ params }) {
   const y = 0;
   const { slug } = params;
-  const blocks = Array.from({ length: 30 }, (_, idx) => `Block ${idx + 1}`);
 
 
   try {
@@ -45,7 +46,27 @@ export async function generateMetadata({ params }) {
 }
 
 const BlogPage = async ({ params }) => {
+
+  const icons = [
+    { icon: faClipboardList, label: 'Recruitment' },
+    { icon: faBookOpen, label: 'Syllabus' },
+    { icon: faPen, label: 'Practice' },
+    { icon: faCalculator, label: 'Admit Card Calculator' },
+    { icon: faTrophy, label: 'Winner' },
+    { icon: faBell, label: 'Updates' },
+    { icon: faComments, label: 'Feedback' },
+    { icon: faUser, label: 'Profile' },
+    { icon: faCogs, label: 'Settings' },
+    { icon: faChartLine, label: 'Analytics' },
+    { icon: faEnvelope, label: 'Contact Us' },
+    { icon: faFileAlt, label: 'Documents' },
+    { icon: faSignInAlt, label: 'Login' },
+    { icon: faUserPlus, label: 'Register' },
+    { icon: faHome, label: 'Home' },
+];
+
   const { slug } = params;
+  const blocks = Array.from({ length: 30 }, (_, idx) => `Block ${idx + 1}`);
   let post = null;
 
   try {
@@ -89,12 +110,32 @@ const BlogPage = async ({ params }) => {
 
       {/* Scroll container */}
       <div className="scroll-container div2">
-        {blocks.map((block, idx) => (
-          <div key={idx} className="scroll-block">
-            {block}
-          </div>
-        ))}
+      {icons.map((item, idx) => (
+        <div key={idx} className="scroll-block">
+      <FontAwesomeIcon className='mobile-icon'
+        icon={item.icon} 
+        size="2x" 
+        style={{ color: '#4CAF50', marginBottom: '5px' }} // Inline styling here
+      />
+      <div className='icon-label' style={{ 
+        fontSize: '14px', 
+        fontWeight: 'bold', 
+        color: '#555' 
+      }}>
+        {item.label}
       </div>
+        </div>
+      ))}
+    </div>
+      <div class="announcement-container fixed">
+        <div class="announcement-runner">
+          🚨 Important Announcement: Website maintenance will occur tonight from 12 AM to 2 AM. Please save your work! 🚨
+          📢 New Feature: We have added dark mode support! Check it out in your settings. 📢
+          ⚠️ Security Reminder: Please do not share your login credentials with anyone. Stay safe! ⚠️
+
+        </div>
+      </div>
+
       <div className="container mt-4">
         <div className="row">
           <div className="col-md-20 ">
@@ -106,6 +147,27 @@ const BlogPage = async ({ params }) => {
           </div>
         </div>
       </div>
+
+      <div class="updates-section">
+        <h2>Important Updates</h2>
+        <div class="scrolling-container fixed">
+          <div class="scrolling-content">
+            <div class="message-item">
+              🚨 <strong>Maintenance Alert:</strong> The website will undergo maintenance from 12 AM to 2 AM tonight. Please save your work! 🚨
+            </div>
+            <div class="message-item">
+              📢 <strong>New Feature:</strong> Dark mode is now available! Switch in your settings to check it out. 📢
+            </div>
+            <div class="message-item">
+              ⚠️ <strong>Security Reminder:</strong> Keep your login credentials safe. Do not share them with anyone! ⚠️
+            </div>
+            <div class="message-item">
+              💡 <strong>Tip:</strong> You can customize your dashboard using the settings menu. Try it today! 💡
+            </div>
+          </div>
+        </div>
+      </div>
+
 
       <footer className="footer bg-light py-4">
         <div className="container">

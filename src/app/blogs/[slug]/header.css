@@ -17,15 +17,25 @@
 .scroll-block {
   min-width: 150px;
   height: 100px;
-  background-color: #4CAF50;
-  color: white;
+  background-color: rgba(169, 235, 174, 0.8); /* Semi-transparent background */
+  color: rgb(8, 0, 0);
   margin-right: 10px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  animation: shake 1s infinite ease-in-out; /* Shake every 5 seconds */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Slightly larger shadow for depth */
+  animation: shake 1s infinite ease-in-out; /* Shake animation */
+  backdrop-filter: blur(5px); /* Optional: add blur effect to the background */
+  padding: 15px; /* Add padding for better spacing */
+}
+
+/* Optional hover effect */
+.scroll-block:hover {
+  background-color: #FF8C61; /* Darken background on hover */
+  color: #f8f9fa;
+  transform: scale(1.05); /* Slightly scale up on hover */
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition */
 }
 
 
@@ -110,7 +120,13 @@
     min-width: 80px;
     height: 80px;
   }  
-
+   .mobile-icon {
+    font-size: 24px; /* Mobile size */
+  }
+  .icon-label{
+    display: none;
+    
+  }
   .nav-links {
       position: absolute;
       top: 0;
@@ -189,6 +205,8 @@
   font-size: 24px; /* Title size */
   color: #333; /* Darker color for the title */
   margin: 0 0 5px; /* Margin below the title */
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-weight: 900;
 }
 
 .post-date {
@@ -265,4 +283,87 @@
 .footer .text-center p {
   font-size: 0.875rem;
   color: #6c757d;
+}
+ /* Main container for the runner */
+ .announcement-container {
+  background-color: #ffcc00; /* Bright color for visibility */
+  padding: 10px;
+  overflow: hidden;
+  position: relative;
+  font-family: Arial, sans-serif;
+}
+
+/* Text scrolling animation */
+.announcement-runner {
+  white-space: nowrap;
+  display: inline-block;
+  animation: scroll-left 40s linear infinite 0s;
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Scrolling keyframe animation */
+@keyframes scroll-left {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+/* Make the container fixed on top */
+.announcement-container.fixed {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+/* Main container for important updates */
+.updates-section {
+  padding: 20px;
+  background-color: #f9f9f9;
+  margin-top: 80px; /* Adjust margin to avoid overlap with header */
+}
+
+/* Scroll container for announcements */
+.scrolling-container {
+  background-color: #ffcc00; /* Highlight background for announcements */
+  overflow: hidden; /* Hide overflow */
+  position: relative;
+  padding: 10px;
+  border-radius: 8px;
+  height: 250px; /* Set height to allow space for vertical scrolling */
+}
+
+/* Scrolling animation for the message blocks */
+.scrolling-content {
+  display: block;
+  animation: vertical-scroll 10s linear infinite 0s; /* Vertical scrolling */
+}
+
+/* Styling for each message block */
+.message-item {
+  display: block;
+  margin-bottom: 20px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+  background-color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Keyframes for vertical scrolling */
+@keyframes vertical-scroll {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(-100%);
+  }
 }

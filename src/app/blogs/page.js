@@ -1,6 +1,6 @@
 import React from 'react';
 import './header.css';
-import { db } from "../firebase-config";
+import { db } from "../../firebase-config";
 import { collection, getDocs } from 'firebase/firestore';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {   faClipboardList, faBookOpen, faPen, faCalculator, faTrophy, faBell, faComments, faUser, faCogs, faChartLine, faEnvelope, faFileAlt, faSignInAlt, faUserPlus, faHome } from '@fortawesome/free-solid-svg-icons';
