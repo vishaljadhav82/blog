@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'; // Already imported in your case
 import '@/components/header/header.css'
 
 export async function generateMetadata({ params }) {
+  const y = 0;
   const { slug } = params;
   const blocks = Array.from({ length: 30 }, (_, idx) => `Block ${idx + 1}`);
 
