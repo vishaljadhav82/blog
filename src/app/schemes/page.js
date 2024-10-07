@@ -27,9 +27,20 @@ const Header = async () => {
 
   let posts = []; // Initialize posts as an empty array
 
+<<<<<<< HEAD
   try {
     const postsRef = collection(db, 'posts'); // Reference to the 'posts' collection
     const querySnapshot = await getDocs(postsRef); // Fetch all documents in the collection
+=======
+      try {
+        console.log('Fetching from Firestore...');
+        const postsRef = collection(db, 'posts');
+        const q = query(
+          postsRef,
+          where('category', '==', 'schemes') );
+        const querySnapshot = await getDocs(q);
+        const blogs = querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+>>>>>>> d9b682b51b86d6f815814c83383304a84814a02a
 
     // Check if the collection is not empty
     if (!querySnapshot.empty) {
@@ -47,6 +58,7 @@ const Header = async () => {
 
   return (
     <>
+<<<<<<< HEAD
       <div className="header">
         <nav className="navbar">
           <div className="logo">&#394;&#314;gital कट्टा</div>
@@ -87,6 +99,44 @@ const Header = async () => {
       }}>
         {item.label}
       </div>
+=======
+      <Head>
+        <title>All Blogs</title>
+        <meta name="description" content="Explore a wide variety of blogs." />
+      </Head>
+      <Header />
+      <Container className="blogs-container">
+        <h2 className="section-title">All Blogs</h2>
+        <Row>
+          {currentBlogs.map((blog) => (
+            <Col md={4} className="blog-card" key={blog.id}>
+              <Card>
+                <Card.Img variant="top" src={blog.img} />
+                <Card.Body>
+                  <Card.Title>{blog.title}</Card.Title>
+                  <Card.Text>{blog.description.slice(0, 300)}...</Card.Text>
+                  <Link href={`/blogs/${blog.slug}`} className="btn btn-primary">
+                    Read More
+                  </Link>
+                </Card.Body>
+              </Card>
+            </Col>
+          ))}
+        </Row>
+        <div className="pagination-container">
+          <ReactPaginate
+            previousLabel={'Previous'}
+            nextLabel={'Next'}
+            breakLabel={'...'}
+            breakClassName={'break-me'}
+            pageCount={pageCount}
+            marginPagesDisplayed={2}
+            pageRangeDisplayed={3}
+            onPageChange={handlePageClick}
+            containerClassName={'pagination'}
+            activeClassName={'active'}
+          />
+>>>>>>> d9b682b51b86d6f815814c83383304a84814a02a
         </div>
       ))}
     </div>
