@@ -1,7 +1,7 @@
 import React from 'react';
 import './header.css';
 import { db } from "../../firebase-config";
-import { collection, getDocs } from 'firebase/firestore';
+import { collection, getDocs, query, where } from 'firebase/firestore';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {   faClipboardList, faBookOpen, faPen, faCalculator, faTrophy, faBell, faComments, faUser, faCogs, faChartLine, faEnvelope, faFileAlt, faSignInAlt, faUserPlus, faHome } from '@fortawesome/free-solid-svg-icons';
 
@@ -29,7 +29,10 @@ const Header = async () => {
 
   try {
     const postsRef = collection(db, 'posts'); // Reference to the 'posts' collection
-    const querySnapshot = await getDocs(postsRef); // Fetch all documents in the collection
+    const educationQuery = query(postsRef, where('category', '==', 'news'));
+
+    // Execute the query and get the documents
+    const querySnapshot = await getDocs(educationQuery); // Use getDocs to fetch the query result
 
     // Check if the collection is not empty
     if (!querySnapshot.empty) {

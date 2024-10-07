@@ -25,7 +25,7 @@
   justify-content: center;
   border-radius: 5px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Slightly larger shadow for depth */
-  animation: shake 1s infinite ease-in-out; /* Shake animation */
+  animation: shake 10s infinite ease-in-out 5s; /* Shake animation */
   backdrop-filter: blur(5px); /* Optional: add blur effect to the background */
   padding: 15px; /* Add padding for better spacing */
 }

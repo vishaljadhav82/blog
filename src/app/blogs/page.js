@@ -5,6 +5,12 @@ import { collection, getDocs } from 'firebase/firestore';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {   faClipboardList, faBookOpen, faPen, faCalculator, faTrophy, faBell, faComments, faUser, faCogs, faChartLine, faEnvelope, faFileAlt, faSignInAlt, faUserPlus, faHome } from '@fortawesome/free-solid-svg-icons';
 
+   
+export const metadata = {
+  title: 'Digital कट्टा - Blogs',
+}
+
+
 
 const Header = async () => {
   const icons = [
@@ -60,7 +66,7 @@ const Header = async () => {
 
           <ul className="nav-links">
             <li><a href="#">Home</a></li>
-            <li><a href="/blogs">Education</a></li>
+            <li><a href="/blogs">Blogs</a></li>
             <li><a href="/news">News</a></li>
             <li><a href="/education">Education</a></li>
             <li><a href="/schemes">Schemes</a></li>

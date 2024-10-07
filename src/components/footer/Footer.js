@@ -22,7 +22,7 @@ function Footer() {
         </Row>
         <Row>
           <Col className="text-center mt-4">
-            <p>&copy; {new Date().getFullYear()} Dharashiv Diaries. All Rights Reserved.</p>
+            <p>&copy; {new Date().getFullYear()} Digital कट्टा. All Rights Reserved.</p>
           </Col>
         </Row>
       </Container>

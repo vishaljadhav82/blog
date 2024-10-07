@@ -15,14 +15,14 @@ const geistMono = localFont({
 
 export const metadata = {
   title: {
-    default: "Digital Katta",
+    default: "Digital कट्टा",
     template: "%s"
   },
-  description: "आपला ब्लॉग, आपला वारसा",
+  description: "Unlocking Knowledge, One Post at a Time",
   openGraph: {
     title:  "Blog",
     description: "आपला ब्लॉग, आपला वारसा",
-    images: ["./image.png"],
+    images: ["./digital_katta_1.png"],
     favicon: "./icon.png", // Replace with the URL of your favicon
 
   }

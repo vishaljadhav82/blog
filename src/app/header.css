@@ -25,7 +25,7 @@
   justify-content: center;
   border-radius: 5px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Slightly larger shadow for depth */
-  animation: shake 1s infinite ease-in-out; /* Shake animation */
+  animation: shake 2s infinite ease-in-out 5s; /* Shake animation */
   backdrop-filter: blur(5px); /* Optional: add blur effect to the background */
   padding: 15px; /* Add padding for better spacing */
 }
@@ -41,9 +41,9 @@
 
 @keyframes shake {
   0% { transform: translate(0) rotate(0deg); }
-  25% { transform: translate(-5px, 0) rotate(-2deg); }
-  50% { transform: translate(5px, 0) rotate(2deg); }
-  75% { transform: translate(-5px, 0) rotate(-2deg); }
+  25% { transform: translate(-1px, 0) rotate(-2deg); }
+  50% { transform: translate(1px, 0) rotate(2deg); }
+  75% { transform: translate(-1px, 0) rotate(-2deg); }
   100% { transform: translate(0) rotate(0deg); }
 }
 

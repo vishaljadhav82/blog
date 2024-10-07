@@ -30,14 +30,7 @@ export default function AboutLayout({ children }) {
         </nav>
       </div>
 
-      {/* Scroll container */}
-      <div className="scroll-container div2">
-        {blocks.map((block, idx) => (
-          <div key={idx} className="scroll-block">
-            {block}
-          </div>
-        ))}
-      </div>
+      
     <div className="container">
       <header className="bg-light p-3">
         <h1>About Us</h1>
