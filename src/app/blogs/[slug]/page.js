@@ -5,10 +5,8 @@ import '@/components/header/header.css'
 
 export async function generateMetadata({ params }) {
   const { slug } = params;
-<<<<<<< HEAD
   const blocks = Array.from({ length: 30 }, (_, idx) => `Block ${idx + 1}`);
-=======
->>>>>>> d9b682b51b86d6f815814c83383304a84814a02a
+
 
   try {
     const postsRef = collection(db, 'posts');
@@ -66,7 +64,6 @@ const BlogPage = async ({ params }) => {
 
   return (
     <>
-<<<<<<< HEAD
 <div className="header">
         <nav className="navbar">
           <div className="logo">Digital कट्टा</div>
@@ -100,47 +97,6 @@ const BlogPage = async ({ params }) => {
       <div className="container mt-4">
         <div className="row">
           <div className="col-md-20 ">
-=======
-<header className="header-style-1">
-    <nav className="navbar navbar-expand-lg main-header">
-      <div className="container">
-        <div className="row w-100">
-          <div className="col-12 col-lg-auto text-center text-lg-left">
-            <a className="navbar-brand" href="/">
-              <h1>Dharashiv Diaries</h1>
-            </a>
-          </div>
-          <div className="col-12 col-lg d-block d-lg-flex justify-content-lg-end mt-3 mt-lg-0">
-            <ul className="navbar-nav me-auto w-100 d-lg-flex justify-content-lg-between">
-              <li className="nav-item">
-                <a className="nav-link" href="/">Home</a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="/blogs">Blogs</a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="/news">News</a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="/schemes">Government Schemes</a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="/jobs">Jobs/Recruitment</a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="/education">Education</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </nav>
-  </header>
-
-      <div className="container mt-4">
-        <div className="row">
-          <div className="col-md-20">
->>>>>>> d9b682b51b86d6f815814c83383304a84814a02a
             <div className="card">
               <div className="card-body">
                 <div className="card-text" dangerouslySetInnerHTML={{ __html: post ? post.content : "Content not available" }} />
