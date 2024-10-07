@@ -2,7 +2,9 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default function AboutPage() {
-  return (
+
+  return (<>
+  
     <div>
       {/* About Me Section */}
       <section className="mb-5">
@@ -18,5 +20,6 @@ Let's connect and explore the exciting world of web development together!
             </section>
 
           </div>
+          </>
   );
 }

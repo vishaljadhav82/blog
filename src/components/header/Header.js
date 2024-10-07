@@ -1,53 +1,40 @@
-import React, { useState } from 'react';
-import { Navbar, Nav, Container } from 'react-bootstrap';
-import Image from 'next/image';
-import { useRouter } from 'next/navigation';
+import React, { useEffect } from 'react';
 import './header.css';
-import logo from '../../app/logo.png'; // Adjust the path if necessary
 
 const Header = () => {
-  const router = useRouter();
-  const [activeTab, setActiveTab] = useState('home');
+  const blocks = Array.from({ length: 30 }, (_, idx) => `Block ${idx + 1}`);
 
-  // Example routes (adjust as needed)
-  const routes = [
-    { path: '/', label: 'Home' },
-    { path: '/blogs', label: 'Blogs' },
-    { path: '/news', label: 'News' },
-    { path: '/schemes', label: 'Government Schemes' },
-    { path: '/jobs', label: 'Jobs/Recruitment' },
-    { path: '/education', label: 'Education' },
-  ];
-
-  const handleTabClick = (path) => {
-    setActiveTab(path);
-    router.push(path);
+  // Function to shake blocks
+  const shakeBlocks = () => {
+    const blockEls = document.querySelectorAll('.scroll-block');
+    blockEls.forEach((block) => {
+      block.classList.add('shake');
+      block.addEventListener(
+        'animationend',
+        () => {
+          block.classList.remove('shake');
+        },
+        { once: true }
+      );
+    });
   };
 
+  // useEffect to handle shake interval
+  useEffect(() => {
+    const interval = setInterval(shakeBlocks, 1000);
+    return () => clearInterval(interval); // Cleanup interval on unmount
+  }, []);
+
   return (
-    <header className="header-style-1">
-      <Navbar expand="lg" className="main-header">
-        <Container>
-          <Navbar.Brand>
-            <h1>Dharashiv Diaries</h1>
-          </Navbar.Brand>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="me-auto">
-              {routes.map((route) => (
-                <button
-                  key={route.path}
-                  className={`navfont ${activeTab === route.path ? 'active' : ''}`}
-                  onClick={() => handleTabClick(route.path)}
-                >
-                  {route.label}
-                </button>
-              ))}
-            </Nav>
-          </Navbar.Collapse>
-        </Container>
-      </Navbar>
-    </header>
+    <div>
+      <div className="scroll-container">
+        {blocks.map((block, idx) => (
+          <div key={idx} className="scroll-block">
+            {block}
+          </div>
+        ))}
+      </div>
+    </div>
   );
 };
 
