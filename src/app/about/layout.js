@@ -21,7 +21,7 @@ export default function AboutLayout({ children }) {
           </label>
 
           <ul className="nav-links">
-            <li><a href="#">Home</a></li>
+            <li><a href="/">Home</a></li>
             <li><a href="/education">Education</a></li>
             <li><a href="/">Services</a></li>
             <li><a href="#">Contact</a></li>

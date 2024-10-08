@@ -59,7 +59,7 @@ const Header = async () => {
           </label>
 
           <ul className="nav-links">
-            <li><a href="#">Home</a></li>
+            <li><a href="/">Home</a></li>
             <li><a href="/blogs">Blogs</a></li>
             <li><a href="/news">News</a></li>
             <li><a href="/education">Education</a></li>
