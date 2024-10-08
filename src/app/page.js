@@ -7,6 +7,7 @@ import {   faClipboardList, faBookOpen, faPen, faCalculator, faTrophy, faBell, f
 
 
 const Header = async () => {
+  
   const icons = [
     { icon: faClipboardList, label: 'Recruitment' },
     { icon: faBookOpen, label: 'Syllabus' },
