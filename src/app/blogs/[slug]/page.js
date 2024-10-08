@@ -66,7 +66,6 @@ const BlogPage = async ({ params }) => {
 ];
 
   const { slug } = params;
-  const blocks = Array.from({ length: 30 }, (_, idx) => `Block ${idx + 1}`);
   let post = null;
 
   try {
@@ -128,12 +127,7 @@ const BlogPage = async ({ params }) => {
       ))}
     </div>
       <div class="announcement-container fixed">
-        <div class="announcement-runner">
-          🚨 Important Announcement: Website maintenance will occur tonight from 12 AM to 2 AM. Please save your work! 🚨
-          📢 New Feature: We have added dark mode support! Check it out in your settings. 📢
-          ⚠️ Security Reminder: Please do not share your login credentials with anyone. Stay safe! ⚠️
-
-        </div>
+        <div class="announcement-runner">"🧠 Threads of Thought, Flow of Knowledge | ✍️ Bind Your Ideas to Pen | 💪 Power of Pen, Revolution of Thought | 🔦 Walk in the Light of Knowledge | 🌟 Create Inspiration through Writing"</div>
       </div>
 
       <div className="container mt-4">
@@ -141,6 +135,8 @@ const BlogPage = async ({ params }) => {
           <div className="col-md-20 ">
             <div className="card">
               <div className="card-body">
+                <h1 style={{fontWeight:'bold'}}>{post.title}</h1>
+              <p class="highlight-paragraph"> {post.description} </p>
                 <div className="card-text" dangerouslySetInnerHTML={{ __html: post ? post.content : "Content not available" }} />
               </div>
             </div>
@@ -153,17 +149,15 @@ const BlogPage = async ({ params }) => {
         <div class="scrolling-container fixed">
           <div class="scrolling-content">
             <div class="message-item">
-              🚨 <strong>Maintenance Alert:</strong> The website will undergo maintenance from 12 AM to 2 AM tonight. Please save your work! 🚨
+            🛠️ <strong>Need assistance?</strong> We're here to help! Visit our support blog for guidance.🛠️
             </div>
             <div class="message-item">
-              📢 <strong>New Feature:</strong> Dark mode is now available! Switch in your settings to check it out. 📢
+            ❓ <strong>Have a question or issue?</strong> Check out our support blog for quick solutions.❓ 
             </div>
             <div class="message-item">
-              ⚠️ <strong>Security Reminder:</strong> Keep your login credentials safe. Do not share them with anyone! ⚠️
+            💬 <strong> For all support-related queries, head over to our dedicated support blog.</strong>💬 
             </div>
-            <div class="message-item">
-              💡 <strong>Tip:</strong> You can customize your dashboard using the settings menu. Try it today! 💡
-            </div>
+            
           </div>
         </div>
       </div>

@@ -367,3 +367,13 @@
     transform: translateY(-100%);
   }
 }
+.highlight-paragraph {
+  background-color: #e0f7fa; /* Light cyan */
+  padding: 15px;
+  border-left: 8px solid #00796b; /* Dark teal border */
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  font-family: Arial, sans-serif;
+  font-size: 1.1em;
+  color: #333;
+  margin: 20px 0;
+}

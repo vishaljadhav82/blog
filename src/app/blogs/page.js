@@ -99,19 +99,14 @@ const Header = async () => {
 
 
       <div class="announcement-container fixed">
-        <div class="announcement-runner">
-          🚨 Important Announcement: Website maintenance will occur tonight from 12 AM to 2 AM. Please save your work! 🚨
-          📢 New Feature: We have added dark mode support! Check it out in your settings. 📢
-          ⚠️ Security Reminder: Please do not share your login credentials with anyone. Stay safe! ⚠️
-
-        </div>
+      <div class="announcement-runner">"🧠 Threads of Thought, Flow of Knowledge | ✍️ Bind Your Ideas to Pen | 💪 Power of Pen, Revolution of Thought | 🔦 Walk in the Light of Knowledge | 🌟 Create Inspiration through Writing"</div>
       </div>
 
 
       {/* Posts List */}
       <div className="posts-list">
         {posts.map((post) => (
-          <a key={post.id} href="#" className="post">
+          <a key={post.id} href={`/blogs/${post.slug}`} className="post">
             <div className="post-content">
               <p className="post-title">{post.title}</p>
               <p className="post-date">{new Date().toLocaleDateString()}</p>
@@ -126,17 +121,14 @@ const Header = async () => {
         <h2>Important Updates</h2>
         <div class="scrolling-container fixed">
           <div class="scrolling-content">
-            <div class="message-item">
-              🚨 <strong>Maintenance Alert:</strong> The website will undergo maintenance from 12 AM to 2 AM tonight. Please save your work! 🚨
+          <div class="message-item">
+            🛠️ <strong>Need assistance?</strong> We're here to help! Visit our support blog for guidance.🛠️
             </div>
             <div class="message-item">
-              📢 <strong>New Feature:</strong> Dark mode is now available! Switch in your settings to check it out. 📢
+            ❓ <strong>Have a question or issue?</strong> Check out our support blog for quick solutions.❓ 
             </div>
             <div class="message-item">
-              ⚠️ <strong>Security Reminder:</strong> Keep your login credentials safe. Do not share them with anyone! ⚠️
-            </div>
-            <div class="message-item">
-              💡 <strong>Tip:</strong> You can customize your dashboard using the settings menu. Try it today! 💡
+            💬 <strong> For all support-related queries, head over to our dedicated support blog.</strong>💬 
             </div>
           </div>
         </div>
