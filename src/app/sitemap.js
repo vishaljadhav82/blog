@@ -22,7 +22,7 @@ export default async function sitemap() {
                 const data = doc.data();
                 return {
                     url: `https://www.digitalkatta.co.in/blogs/${data.slug}`,
-                    lastModified: data.lastModified ? data.lastModified.toDate() : new Date(), // Handle lastModified from data
+                    lastModified: data.updatedAt ? data.updatedAt.toDate() : new Date(), // Handle lastModified from data
                 };
             });
 
