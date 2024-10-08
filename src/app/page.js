@@ -7,7 +7,6 @@ import {   faClipboardList, faBookOpen, faPen, faCalculator, faTrophy, faBell, f
 
 
 const Header = async () => {
-  
   const icons = [
     { icon: faClipboardList, label: 'Recruitment' },
     { icon: faBookOpen, label: 'Syllabus' },
@@ -62,7 +61,7 @@ const Header = async () => {
           <ul className="nav-links">
             <li><a href="/">Home</a></li>
             <li><a href="/blogs">Blogs</a></li>
-            <li><a href="/news">News</a></li>
+            <li><a href="/news" rel='nofollow'>News</a></li>
             <li><a href="/education">Education</a></li>
             <li><a href="/schemes">Schemes</a></li>
             <li className="close-menu"><label htmlFor="nav-toggle">✖</label></li>
@@ -106,9 +105,8 @@ const Header = async () => {
             <div className="post-content">
               <p className="post-title">{post.title}</p>
               <p className="post-date">{new Date().toLocaleDateString()}</p>
-              <p className="post-excerpt">{post.description}</p>
+              <img  src={post.img} alt={`Post`} className="post-image" />
             </div>
-            <img src={post.img} alt={`Post`} className="post-image" />
           </a>
         ))}
       </div>

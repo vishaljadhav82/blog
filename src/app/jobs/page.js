@@ -109,9 +109,8 @@ const Header = async () => {
             <div className="post-content">
               <p className="post-title">{post.title}</p>
               <p className="post-date">{new Date().toLocaleDateString()}</p>
-              <p className="post-excerpt">{post.description}</p>
+              <img  src={post.img} alt={`Post`} className="post-image" />
             </div>
-            <img src={post.img} alt={`Post`} className="post-image" />
           </a>
         ))}
       </div>
