@@ -105,7 +105,7 @@ const Header = async () => {
       {/* Posts List */}
       <div className="posts-list">
         {posts.map((post) => (
-          <a key={post.id} href="#" className="post">
+          <a key={post.id} href={`/blogs/${post.slug}`} className="post">
             <div className="post-content">
               <p className="post-title">{post.title}</p>
               <p className="post-date">{new Date().toLocaleDateString()}</p>
