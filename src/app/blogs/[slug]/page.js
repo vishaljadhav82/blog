@@ -100,6 +100,7 @@ const BlogPage = async ({ params }) => {
           <li><a href="/">Home</a></li>
             <li><a href="/blogs">Blogs</a></li>
             <li><a href="/education">Education</a></li>
+            <li><a href="/news" rel="nofollow">News</a></li>
             <li><a href="/jobs">Jobs</a></li>
             <li><a href="/schemes">Schemes</a></li>
             <li className="close-menu"><label htmlFor="nav-toggle">✖</label></li>
