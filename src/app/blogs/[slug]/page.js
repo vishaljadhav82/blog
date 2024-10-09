@@ -3,8 +3,7 @@ import { collection, query, where, getDocs } from 'firebase/firestore';
 import 'bootstrap/dist/css/bootstrap.min.css'; // Already imported in your case
 import './header.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {   faClipboardList, faBookOpen, faPen, faCalculator, faTrophy, faBell, faComments, faUser, faCogs, faChartLine, faEnvelope, faFileAlt, faSignInAlt, faUserPlus, faHome } from '@fortawesome/free-solid-svg-icons';
-
+import { faClipboardList, faBookOpen, faPen, faCalculator, faTrophy, faBell, faComments, faUser, faCogs, faChartLine, faEnvelope, faFileAlt, faSignInAlt, faUserPlus, faHome } from '@fortawesome/free-solid-svg-icons';
 
 
 
@@ -65,10 +64,12 @@ const BlogPage = async ({ params }) => {
     { icon: faSignInAlt, label: 'Login' },
     { icon: faUserPlus, label: 'Register' },
     { icon: faHome, label: 'Home' },
-];
+  ];
 
   const { slug } = params;
   let post = null;
+
+
 
   try {
     const postsRef = collection(db, 'posts');
@@ -87,8 +88,7 @@ const BlogPage = async ({ params }) => {
 
   return (
     <>
-   
-<div className="header">
+      <div className="header">
         <nav className="navbar">
           <div className="logo">Digital कट्टा</div>
 
@@ -100,7 +100,7 @@ const BlogPage = async ({ params }) => {
           </label>
 
           <ul className="nav-links">
-          <li><a href="/">Home</a></li>
+            <li><a href="/">Home</a></li>
             <li><a href="/blogs">Blogs</a></li>
             <li><a href="/education">Education</a></li>
             <li><a href="/news" rel="nofollow">News</a></li>
@@ -113,23 +113,23 @@ const BlogPage = async ({ params }) => {
 
       {/* Scroll container */}
       <div className="scroll-container div2">
-      {icons.map((item, idx) => (
-        <div key={idx} className="scroll-block">
-      <FontAwesomeIcon className='mobile-icon'
-        icon={item.icon} 
-        size="2x" 
-        style={{ color: '#4CAF50', marginBottom: '5px' }} // Inline styling here
-      />
-      <div className='icon-label' style={{ 
-        fontSize: '14px', 
-        fontWeight: 'bold', 
-        color: '#555' 
-      }}>
-        {item.label}
+        {icons.map((item, idx) => (
+          <div key={idx} className="scroll-block">
+            <FontAwesomeIcon className='mobile-icon'
+              icon={item.icon}
+              size="2x"
+              style={{ color: '#4CAF50', marginBottom: '5px' }} // Inline styling here
+            />
+            <div className='icon-label' style={{
+              fontSize: '14px',
+              fontWeight: 'bold',
+              color: '#555'
+            }}>
+              {item.label}
+            </div>
+          </div>
+        ))}
       </div>
-        </div>
-      ))}
-    </div>
       <div class="announcement-container fixed">
         <div class="announcement-runner">"🧠 Threads of Thought, Flow of Knowledge | ✍️ Bind Your Ideas to Pen | 💪 Power of Pen, Revolution of Thought | 🔦 Walk in the Light of Knowledge | 🌟 Create Inspiration through Writing"</div>
       </div>
@@ -139,8 +139,8 @@ const BlogPage = async ({ params }) => {
           <div className="col-md-20 ">
             <div className="card">
               <div className="card-body">
-                <h1 style={{fontWeight:'bold'}}>{post.title}</h1>
-              <p class="highlight-paragraph"> {post.description} </p>
+                <h1 style={{ fontWeight: 'bold' }}>{post.title}</h1>
+                <p class="highlight-paragraph"> {post.description} </p>
                 <div className="card-text" dangerouslySetInnerHTML={{ __html: post ? post.content : "Content not available" }} />
               </div>
             </div>
@@ -153,15 +153,15 @@ const BlogPage = async ({ params }) => {
         <div class="scrolling-container fixed">
           <div class="scrolling-content">
             <div class="message-item">
-            🛠️ <strong>Need assistance?</strong> We're here to help! Visit our support blog for guidance.🛠️
+              🛠️ <strong>Need assistance?</strong> We're here to help! Visit our support blog for guidance.🛠️
             </div>
             <div class="message-item">
-            ❓ <strong>Have a question or issue?</strong> Check out our support blog for quick solutions.❓ 
+              ❓ <strong>Have a question or issue?</strong> Check out our support blog for quick solutions.❓
             </div>
             <div class="message-item">
-            💬 <strong> For all support-related queries, head over to our dedicated support blog.</strong>💬 
+              💬 <strong> For all support-related queries, head over to our dedicated support blog.</strong>💬
             </div>
-            
+
           </div>
         </div>
       </div>
