@@ -6,7 +6,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {   faClipboardList, faBookOpen, faPen, faCalculator, faTrophy, faBell, faComments, faUser, faCogs, faChartLine, faEnvelope, faFileAlt, faSignInAlt, faUserPlus, faHome } from '@fortawesome/free-solid-svg-icons';
 
 export async function generateMetadata({ params }) {
-  const y = 0;
   const { slug } = params;
 
 
@@ -85,6 +84,7 @@ const BlogPage = async ({ params }) => {
 
   return (
     <>
+   
 <div className="header">
         <nav className="navbar">
           <div className="logo">Digital कट्टा</div>
