@@ -21,9 +21,9 @@ export const metadata = {
   description: "Unlocking Knowledge, One Post at a Time",
   openGraph: {
     title:  "Blog",
-    description: "आपला ब्लॉग, आपला वारसा",
-    images: ["./digital_katta_1.png"],
-    favicon: "./icon.png", // Replace with the URL of your favicon
+    description: "Unlocking Knowledge, One Post at a Time",
+    images: ["https://firebasestorage.googleapis.com/v0/b/blog-3551c.appspot.com/o/digital_katta_1.png?alt=media&token=72ceba7c-8fb0-4269-9a11-319d5a711d55"],
+    favicon: "https://firebasestorage.googleapis.com/v0/b/blog-3551c.appspot.com/o/icon.png?alt=media&token=e554f47e-d52e-460d-8328-42c028d5f3ce", // Replace with the URL of your favicon
 
   }
 };

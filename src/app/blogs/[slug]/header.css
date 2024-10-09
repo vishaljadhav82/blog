@@ -115,6 +115,13 @@
 /* Mobile styles */
 @media (max-width: 768px) {
 
+  .post-image {
+    width: 300px; /* Set width for images */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 5px; /* Rounded corners for images */
+  }
+  
+
   .scroll-block {
     min-width: 80px;
     height: 80px;
@@ -221,7 +228,7 @@
 }
 
 .post-image {
-  width: 300px; /* Set width for images */
+  width: 600px; /* Set width for images */
   height: auto; /* Maintain aspect ratio */
   border-radius: 5px; /* Rounded corners for images */
 }
