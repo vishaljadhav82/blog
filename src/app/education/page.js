@@ -47,7 +47,26 @@ const Header = async () => {
   } catch (error) {
     console.error('Error fetching blog posts:', error);
   }
-
+  const sortedPosts = posts.sort((a, b) => {
+  
+    return  b.createdAt - a.createdAt;
+  }).slice(0, 20);
+  
+  function calculateRelativeTime(date) {
+    const now = new Date();
+    const diff = now - date;
+  
+    if (diff < 60000) { // Less than 1 minute
+      return "just now";
+    } else if (diff < 3600000) { // Less than 1 hour
+      return `${Math.floor(diff / 60000)} minutes ago`;
+    } else if (diff < 86400000) { // Less than 1 day
+      return `${Math.floor(diff / 3600000)} hours ago`;
+    } else {
+      return date.toDateString();
+    }
+  }
+  
   return (
     <>
       <div className="header">
@@ -104,7 +123,7 @@ const Header = async () => {
 
       {/* Posts List */}
       <div className="posts-list">
-        {posts.map((post) => (
+        {sortedPosts.map((post) => (
           <a key={post.id} href={`/blogs/${post.slug}`} className="post">
             <div className="post-content">
               <p className="post-title">{post.title}</p>
