@@ -1,6 +1,5 @@
 import localFont from "next/font/local";
 import "./globals.css";
-import { Analytics } from '@vercel/analytics/react';
 
 
 
@@ -30,21 +29,12 @@ export const metadata = {
   }
 };
 
-export const dynamic = 'auto'
-export const dynamicParams = true
-export const revalidate = false
-export const fetchCache = 'auto'
-export const runtime = 'nodejs'
-export const preferredRegion = 'auto'
-export const maxDuration = 5
-
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         {children}
-        <Analytics />
       </body>
     </html>
   );
