@@ -1,7 +1,8 @@
 import localFont from "next/font/local";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/react"
-import AdSense from "@/components/Adsense";
+import Script from "next/script";
+
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
@@ -37,8 +38,12 @@ export default function RootLayout({ children }) {
      
         {children}
         <Analytics />
-        <AdSense />
-
+        <Script 
+    async
+    src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6087364343233964`}
+    crossOrigin='anonymous'
+    strategy='afterInteractive'
+    />
       </body>
     </html>
   );
