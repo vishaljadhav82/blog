@@ -24,7 +24,7 @@ export const metadata = {
     title:  "Blog",
     description: "Unlocking Knowledge, One Post at a Time",
     images: ["https://firebasestorage.googleapis.com/v0/b/blog-3551c.appspot.com/o/digital_katta_1.png?alt=media&token=72ceba7c-8fb0-4269-9a11-319d5a711d55"],
-    favicon: "https://firebasestorage.googleapis.com/v0/b/blog-3551c.appspot.com/o/icon.png?alt=media&token=e554f47e-d52e-460d-8328-42c028d5f3ce", // Replace with the URL of your favicon
+    favicon: "https://firebasestorage.googleapis.com/v0/b/blog-3551c.appspot.com/o/icon.png", // Replace with the URL of your favicon
 
   }
 };
@@ -34,6 +34,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
+      <link rel="shortcut icon" href="https://firebasestorage.googleapis.com/v0/b/blog-3551c.appspot.com/o/icon.png" type="image/x-icon" />
       <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6087364343233964"
      crossorigin="anonymous"></script>
            </head>
